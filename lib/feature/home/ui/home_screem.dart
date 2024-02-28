@@ -20,7 +20,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
+    getIt<PreferenceRepositoryService>().initialize();
     getIt<HomeBloc>().add(const HomeEvent.getUser());
+
     super.initState();
   }
 

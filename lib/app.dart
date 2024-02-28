@@ -4,9 +4,14 @@ import 'package:plancarrera/core/di/injector.dart';
 import 'package:plancarrera/feature/home/bloc/home_bloc.dart';
 import 'package:plancarrera/feature/home/ui/home_screem.dart';
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {

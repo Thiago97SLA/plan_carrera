@@ -7,6 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 class PreferenceRepositoryService implements PreferenceRepositoryImpl {
   static const String _user = 'user';
   static const String _isSaveUser = 'isSaveUser';
+  static const String _awaitUser = 'awaitUser';
+  static const String _isawaitUser = 'isAwaitUser';
 
   late SharedPreferences _prefs;
   @override
@@ -41,5 +43,31 @@ class PreferenceRepositoryService implements PreferenceRepositoryImpl {
   @override
   Future<void> saveisSaveUser(bool value) async {
     await _prefs.setBool(_isSaveUser, value);
+  }
+
+  @override
+  int? awaitUser() {
+    try {
+      final awaitUser = _prefs.getInt(_awaitUser);
+      return awaitUser;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  @override
+  bool isAwaitUser() {
+    final isSaveUser = _prefs.getBool(_isawaitUser);
+    return isSaveUser ?? false;
+  }
+
+  @override
+  Future<void> saveAwaitUser(int awaitUser) async {
+    await _prefs.setString(_awaitUser, jsonEncode(awaitUser));
+  }
+
+  @override
+  Future<void> saveIsAwaitUser(bool value) async {
+    await _prefs.setBool(_isawaitUser, value);
   }
 }

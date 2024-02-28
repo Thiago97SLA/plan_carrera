@@ -19,32 +19,38 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getUser,
+    required TResult Function(int steps) upDateUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getUser,
+    TResult? Function(int steps)? upDateUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getUser,
+    TResult Function(int steps)? upDateUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetUser value) getUser,
+    required TResult Function(_UpdateUser value) upDateUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetUser value)? getUser,
+    TResult? Function(_UpdateUser value)? upDateUser,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
+    TResult Function(_UpdateUser value)? upDateUser,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +112,7 @@ class _$GetUserImpl implements _GetUser {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getUser,
+    required TResult Function(int steps) upDateUser,
   }) {
     return getUser();
   }
@@ -114,6 +121,7 @@ class _$GetUserImpl implements _GetUser {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getUser,
+    TResult? Function(int steps)? upDateUser,
   }) {
     return getUser?.call();
   }
@@ -122,6 +130,7 @@ class _$GetUserImpl implements _GetUser {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getUser,
+    TResult Function(int steps)? upDateUser,
     required TResult orElse(),
   }) {
     if (getUser != null) {
@@ -134,6 +143,7 @@ class _$GetUserImpl implements _GetUser {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetUser value) getUser,
+    required TResult Function(_UpdateUser value) upDateUser,
   }) {
     return getUser(this);
   }
@@ -142,6 +152,7 @@ class _$GetUserImpl implements _GetUser {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetUser value)? getUser,
+    TResult? Function(_UpdateUser value)? upDateUser,
   }) {
     return getUser?.call(this);
   }
@@ -150,6 +161,7 @@ class _$GetUserImpl implements _GetUser {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetUser value)? getUser,
+    TResult Function(_UpdateUser value)? upDateUser,
     required TResult orElse(),
   }) {
     if (getUser != null) {
@@ -164,11 +176,145 @@ abstract class _GetUser implements HomeEvent {
 }
 
 /// @nodoc
+abstract class _$$UpdateUserImplCopyWith<$Res> {
+  factory _$$UpdateUserImplCopyWith(
+          _$UpdateUserImpl value, $Res Function(_$UpdateUserImpl) then) =
+      __$$UpdateUserImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int steps});
+}
+
+/// @nodoc
+class __$$UpdateUserImplCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$UpdateUserImpl>
+    implements _$$UpdateUserImplCopyWith<$Res> {
+  __$$UpdateUserImplCopyWithImpl(
+      _$UpdateUserImpl _value, $Res Function(_$UpdateUserImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? steps = null,
+  }) {
+    return _then(_$UpdateUserImpl(
+      steps: null == steps
+          ? _value.steps
+          : steps // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateUserImpl implements _UpdateUser {
+  const _$UpdateUserImpl({required this.steps});
+
+  @override
+  final int steps;
+
+  @override
+  String toString() {
+    return 'HomeEvent.upDateUser(steps: $steps)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateUserImpl &&
+            (identical(other.steps, steps) || other.steps == steps));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, steps);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateUserImplCopyWith<_$UpdateUserImpl> get copyWith =>
+      __$$UpdateUserImplCopyWithImpl<_$UpdateUserImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getUser,
+    required TResult Function(int steps) upDateUser,
+  }) {
+    return upDateUser(steps);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getUser,
+    TResult? Function(int steps)? upDateUser,
+  }) {
+    return upDateUser?.call(steps);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getUser,
+    TResult Function(int steps)? upDateUser,
+    required TResult orElse(),
+  }) {
+    if (upDateUser != null) {
+      return upDateUser(steps);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetUser value) getUser,
+    required TResult Function(_UpdateUser value) upDateUser,
+  }) {
+    return upDateUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetUser value)? getUser,
+    TResult? Function(_UpdateUser value)? upDateUser,
+  }) {
+    return upDateUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetUser value)? getUser,
+    TResult Function(_UpdateUser value)? upDateUser,
+    required TResult orElse(),
+  }) {
+    if (upDateUser != null) {
+      return upDateUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateUser implements HomeEvent {
+  const factory _UpdateUser({required final int steps}) = _$UpdateUserImpl;
+
+  int get steps;
+  @JsonKey(ignore: true)
+  _$$UpdateUserImplCopyWith<_$UpdateUserImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$HomeState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(UserModel infoUser) getUset,
+    required TResult Function(UserModel infoUser) updateUset,
     required TResult Function(String messange) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -176,6 +322,7 @@ mixin _$HomeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(UserModel infoUser)? getUset,
+    TResult? Function(UserModel infoUser)? updateUset,
     TResult? Function(String messange)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -183,6 +330,7 @@ mixin _$HomeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(UserModel infoUser)? getUset,
+    TResult Function(UserModel infoUser)? updateUset,
     TResult Function(String messange)? error,
     required TResult orElse(),
   }) =>
@@ -191,6 +339,7 @@ mixin _$HomeState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_GetUset value) getUset,
+    required TResult Function(_UpdateUset value) updateUset,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -198,6 +347,7 @@ mixin _$HomeState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_GetUset value)? getUset,
+    TResult? Function(_UpdateUset value)? updateUset,
     TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -205,6 +355,7 @@ mixin _$HomeState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GetUset value)? getUset,
+    TResult Function(_UpdateUset value)? updateUset,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -268,6 +419,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(UserModel infoUser) getUset,
+    required TResult Function(UserModel infoUser) updateUset,
     required TResult Function(String messange) error,
   }) {
     return initial();
@@ -278,6 +430,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(UserModel infoUser)? getUset,
+    TResult? Function(UserModel infoUser)? updateUset,
     TResult? Function(String messange)? error,
   }) {
     return initial?.call();
@@ -288,6 +441,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(UserModel infoUser)? getUset,
+    TResult Function(UserModel infoUser)? updateUset,
     TResult Function(String messange)? error,
     required TResult orElse(),
   }) {
@@ -302,6 +456,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_GetUset value) getUset,
+    required TResult Function(_UpdateUset value) updateUset,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -312,6 +467,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_GetUset value)? getUset,
+    TResult? Function(_UpdateUset value)? updateUset,
     TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -322,6 +478,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GetUset value)? getUset,
+    TResult Function(_UpdateUset value)? updateUset,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -413,6 +570,7 @@ class _$GetUsetImpl implements _GetUset {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(UserModel infoUser) getUset,
+    required TResult Function(UserModel infoUser) updateUset,
     required TResult Function(String messange) error,
   }) {
     return getUset(infoUser);
@@ -423,6 +581,7 @@ class _$GetUsetImpl implements _GetUset {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(UserModel infoUser)? getUset,
+    TResult? Function(UserModel infoUser)? updateUset,
     TResult? Function(String messange)? error,
   }) {
     return getUset?.call(infoUser);
@@ -433,6 +592,7 @@ class _$GetUsetImpl implements _GetUset {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(UserModel infoUser)? getUset,
+    TResult Function(UserModel infoUser)? updateUset,
     TResult Function(String messange)? error,
     required TResult orElse(),
   }) {
@@ -447,6 +607,7 @@ class _$GetUsetImpl implements _GetUset {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_GetUset value) getUset,
+    required TResult Function(_UpdateUset value) updateUset,
     required TResult Function(_Error value) error,
   }) {
     return getUset(this);
@@ -457,6 +618,7 @@ class _$GetUsetImpl implements _GetUset {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_GetUset value)? getUset,
+    TResult? Function(_UpdateUset value)? updateUset,
     TResult? Function(_Error value)? error,
   }) {
     return getUset?.call(this);
@@ -467,6 +629,7 @@ class _$GetUsetImpl implements _GetUset {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GetUset value)? getUset,
+    TResult Function(_UpdateUset value)? updateUset,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -483,6 +646,162 @@ abstract class _GetUset implements HomeState {
   UserModel get infoUser;
   @JsonKey(ignore: true)
   _$$GetUsetImplCopyWith<_$GetUsetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateUsetImplCopyWith<$Res> {
+  factory _$$UpdateUsetImplCopyWith(
+          _$UpdateUsetImpl value, $Res Function(_$UpdateUsetImpl) then) =
+      __$$UpdateUsetImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserModel infoUser});
+
+  $UserModelCopyWith<$Res> get infoUser;
+}
+
+/// @nodoc
+class __$$UpdateUsetImplCopyWithImpl<$Res>
+    extends _$HomeStateCopyWithImpl<$Res, _$UpdateUsetImpl>
+    implements _$$UpdateUsetImplCopyWith<$Res> {
+  __$$UpdateUsetImplCopyWithImpl(
+      _$UpdateUsetImpl _value, $Res Function(_$UpdateUsetImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? infoUser = null,
+  }) {
+    return _then(_$UpdateUsetImpl(
+      null == infoUser
+          ? _value.infoUser
+          : infoUser // ignore: cast_nullable_to_non_nullable
+              as UserModel,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserModelCopyWith<$Res> get infoUser {
+    return $UserModelCopyWith<$Res>(_value.infoUser, (value) {
+      return _then(_value.copyWith(infoUser: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UpdateUsetImpl implements _UpdateUset {
+  const _$UpdateUsetImpl(this.infoUser);
+
+  @override
+  final UserModel infoUser;
+
+  @override
+  String toString() {
+    return 'HomeState.updateUset(infoUser: $infoUser)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateUsetImpl &&
+            (identical(other.infoUser, infoUser) ||
+                other.infoUser == infoUser));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, infoUser);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateUsetImplCopyWith<_$UpdateUsetImpl> get copyWith =>
+      __$$UpdateUsetImplCopyWithImpl<_$UpdateUsetImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(UserModel infoUser) getUset,
+    required TResult Function(UserModel infoUser) updateUset,
+    required TResult Function(String messange) error,
+  }) {
+    return updateUset(infoUser);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(UserModel infoUser)? getUset,
+    TResult? Function(UserModel infoUser)? updateUset,
+    TResult? Function(String messange)? error,
+  }) {
+    return updateUset?.call(infoUser);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(UserModel infoUser)? getUset,
+    TResult Function(UserModel infoUser)? updateUset,
+    TResult Function(String messange)? error,
+    required TResult orElse(),
+  }) {
+    if (updateUset != null) {
+      return updateUset(infoUser);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_GetUset value) getUset,
+    required TResult Function(_UpdateUset value) updateUset,
+    required TResult Function(_Error value) error,
+  }) {
+    return updateUset(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_GetUset value)? getUset,
+    TResult? Function(_UpdateUset value)? updateUset,
+    TResult? Function(_Error value)? error,
+  }) {
+    return updateUset?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_GetUset value)? getUset,
+    TResult Function(_UpdateUset value)? updateUset,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (updateUset != null) {
+      return updateUset(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateUset implements HomeState {
+  const factory _UpdateUset(final UserModel infoUser) = _$UpdateUsetImpl;
+
+  UserModel get infoUser;
+  @JsonKey(ignore: true)
+  _$$UpdateUsetImplCopyWith<_$UpdateUsetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -553,6 +872,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(UserModel infoUser) getUset,
+    required TResult Function(UserModel infoUser) updateUset,
     required TResult Function(String messange) error,
   }) {
     return error(messange);
@@ -563,6 +883,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function(UserModel infoUser)? getUset,
+    TResult? Function(UserModel infoUser)? updateUset,
     TResult? Function(String messange)? error,
   }) {
     return error?.call(messange);
@@ -573,6 +894,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(UserModel infoUser)? getUset,
+    TResult Function(UserModel infoUser)? updateUset,
     TResult Function(String messange)? error,
     required TResult orElse(),
   }) {
@@ -587,6 +909,7 @@ class _$ErrorImpl implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_GetUset value) getUset,
+    required TResult Function(_UpdateUset value) updateUset,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -597,6 +920,7 @@ class _$ErrorImpl implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_GetUset value)? getUset,
+    TResult? Function(_UpdateUset value)? updateUset,
     TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -607,6 +931,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_GetUset value)? getUset,
+    TResult Function(_UpdateUset value)? updateUset,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {

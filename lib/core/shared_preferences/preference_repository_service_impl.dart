@@ -8,4 +8,8 @@ abstract class PreferenceRepositoryImpl {
   UserModel? getUser();
   bool isSaveUser();
   Future<void> saveisSaveUser(bool value);
+  bool isAwaitUser();
+  Future<void> saveIsAwaitUser(bool value);
+  Future<void> saveAwaitUser(int user);
+  int? awaitUser();
 }

@@ -164,6 +164,7 @@ class APIService {
             break;
           default:
             baseHeaders = {
+              "accept": "application/json",
               "Content-Type": "application/json",
             };
             break;

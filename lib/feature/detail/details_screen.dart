@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:plancarrera/core/di/injector.dart';
+import 'package:plancarrera/feature/home/bloc/home_bloc.dart';
 import 'package:plancarrera/feature/home/models/user_model.dart';
+import 'package:plancarrera/feature/home/ui/home_screem.dart';
 import 'package:plancarrera/ui/componets/custom_scaffold.dart';
 import 'package:plancarrera/ui/utils/font.dart';
 import 'package:plancarrera/ui/utils/palette.dart';
@@ -22,6 +25,8 @@ class _HomeScreenState extends State<DetailScreen> {
   void initState() {
     super.initState();
   }
+
+  TextEditingController textControllerInput = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -149,6 +154,21 @@ class _HomeScreenState extends State<DetailScreen> {
               )
             ],
           )),
+          Form(
+            child: TextFormField(
+              controller: textControllerInput,
+            ),
+          ),
+          Flexible(
+            child: FloatingActionButton(onPressed: () {
+              getIt<HomeBloc>()
+                  .add(HomeEvent.upDateUser(steps: int.tryParse(textControllerInput.text) ?? 0));
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HomeScreen()),
+              );
+            }),
+          )
         ],
       ),
     );

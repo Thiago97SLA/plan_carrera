@@ -4,5 +4,6 @@ part of 'home_bloc.dart';
 class HomeState with _$HomeState {
   const factory HomeState.initial() = _Initial;
   const factory HomeState.getUset(UserModel infoUser) = _GetUset;
+  const factory HomeState.updateUset(UserModel infoUser) = _UpdateUset;
   const factory HomeState.error(String messange) = _Error;
 }

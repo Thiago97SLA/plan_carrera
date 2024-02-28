@@ -23,6 +23,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   Stream<HomeState> mapEventToState(HomeEvent event) async* {
     yield* event.when(
       getUser: _getUser,
+      upDateUser: _updateUser,
     );
   }
 
@@ -35,6 +36,24 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       getIt<PreferenceRepositoryService>().saveUser(response);
       yield HomeState.getUset(response);
     } catch (e) {
+      yield HomeState.error('$e');
+    }
+  }
+
+  Stream<HomeState> _updateUser(int steps) async* {
+    yield const HomeState.initial();
+    int newsteps = steps;
+
+    if (getIt<PreferenceRepositoryService>().isAwaitUser()) {
+      newsteps = getIt<PreferenceRepositoryService>().awaitUser() ?? 0;
+    }
+
+    try {
+      final response = await implHomeService.updateUser(steps: newsteps);
+      yield HomeState.updateUset(response);
+    } catch (e) {
+      getIt<PreferenceRepositoryService>().saveIsAwaitUser(true);
+      getIt<PreferenceRepositoryService>().saveAwaitUser(newsteps);
       yield HomeState.error('$e');
     }
   }

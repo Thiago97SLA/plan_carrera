@@ -24,11 +24,11 @@ class CustomRouter {
           builder: (context) => const HomeScreen(),
           settings: settings,
         );
-      case DetailScreen.route:
-        return MaterialPageRoute(
-          builder: (context) => const DetailScreen(),
-          settings: settings,
-        );
+      // case DetailScreen.route:
+      //   return MaterialPageRoute(
+      //     builder: (context) => const DetailScreen(userInfo: null,),
+      //     settings: settings,
+      //   );
       default:
         return MaterialPageRoute(
           builder: (context) => const ErrorScreen(),

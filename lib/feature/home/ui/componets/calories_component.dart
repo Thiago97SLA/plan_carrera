@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:plancarrera/feature/home/models/user_model.dart';
 import 'package:plancarrera/ui/utils/font.dart';
 import 'package:plancarrera/ui/utils/palette.dart';

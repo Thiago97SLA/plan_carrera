@@ -18,4 +18,17 @@ class HomeService extends ImplHomeService {
     );
     return reponse;
   }
+
+  @override
+  Future<UserModel> updateUser({required int steps}) async {
+    final reponse = await apiService.getEndpointData(
+      requestAuthorization: RequestAuthorization.none,
+      endpoint: EndpointConstants.updateUser,
+      method: RequestMethod.post,
+      urlParams: ['4312'],
+      body: {"steps": steps},
+      fromJson: (json) => UserModel.fromJson(json),
+    );
+    return reponse;
+  }
 }
